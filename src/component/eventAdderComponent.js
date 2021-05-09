@@ -38,8 +38,13 @@ const EventAdder = ({eventStartDate,setEvents, Events,  month, year })=>
         <h5 className="modal-title" id="eventAdderLabel">Add Event</h5>
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div className="modal-body">
+        <div className="modal-body pt-0">
             <form onSubmit={()=>console.log("clicked")}>
+                <div className="row">
+                    <label id="eventStartDate" className="col-form-label text-center">
+                        <span className="badge rounded-pill bg-danger fw-bolder">{eventStartDate}/{month}/{year}</span>
+                    </label>                        
+                </div>
                 <div className="input-group mb-3">
                     <span className="input-group-text" id="eventTitle">Title</span>
                     <input onChange={(event)=>setTitle(event.target.value)} value={title} type="text" className="form-control" placeholder="Please write you event title here" aria-label="Title" aria-describedby="eventTitle"/>
@@ -51,20 +56,16 @@ const EventAdder = ({eventStartDate,setEvents, Events,  month, year })=>
                 </div>                
                 <hr />
                 <div className="row g-4 pt-2 align-items-center">
-                    <div className="col-auto">
-                        <label id="eventStartDate" className="col-form-label">Date: </label>
-                        <input disabled value={`${eventStartDate}/${month}/${year}`} className="form-control" aria-label="date" aria-describedby="eventDate"/>
-
-                    </div>
-                    <div className="col-auto">
-                        <label id="eventStartTime" className="col-form-label">Start Time</label>
-                        <input onChange={(event)=>setStartTime(event.target.value)} className="form-control" type="number" min="0" max="23" value={startTime}></input>
-                        
-                    </div>
-                    <div className="col-auto">
-                        <label id="eventStartDate" className="col-form-label">End Time</label>
-                        <input onChange={(event)=>setEndTime(event.target.value)} className="form-control" type="number" min="0" max="23" value={endTime}></input>
-
+                    <div className="row">
+                        <div className="col-6">
+                            <label id="eventStartTime" className="col-form-label">Start Time</label>
+                            <input onChange={(event)=>setStartTime(event.target.value)} className="form-control" type="number" min="0" max="23" value={startTime}></input>
+                            
+                        </div>
+                        <div className="col-6">
+                            <label id="eventStartDate" className="col-form-label">End Time</label>
+                            <input onChange={(event)=>setEndTime(event.target.value)} className="form-control" type="number" min="0" max="23" value={endTime}></input>
+                        </div>
                     </div>
                 </div>
             </form>

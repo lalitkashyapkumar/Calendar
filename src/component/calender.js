@@ -35,22 +35,22 @@ const Calender = ()=>{
             <div className="row header shadow-lg p-3 mb-5 bg-body rounded">
                 <div className="bg-color">
                     <div className="row justify-content-between">
-                        <div className="col-3 col-md-2 list-group">
-                            <select onChange={(event)=>equal(year, event.target.value, setMonth, setYear)} class="form-select bg-color list-group-item" aria-label="select month">
-                                <option selected={month===0} value="0">Jan</option>
-                                <option selected={month===1} value="1">Feb</option>
-                                <option selected={month===2} value="2">Mar</option>
-                                <option selected={month===3} value="3">Apr</option>
-                                <option selected={month===4} value="4">May</option>
-                                <option selected={month===5} value="5">Jun</option>
-                                <option selected={month===6} value="6">Jul</option>
-                                <option selected={month===7} value="7">Aug</option>
-                                <option selected={month===8} value="8">Sep</option>
-                                <option selected={month===9} value="9">Oct</option>
-                                <option selected={month===10} value="10">Nov</option>
-                                <option selected={month===11} value="11">Dec</option>
+                        <div className="col-4 col-md-2 list-group">
+                            <select className="form-select bg-color list-group-item fw-bold" value={month} onChange={(event)=>equal(year, event.target.value, setMonth, setYear)} aria-label="select month">
+                                <option value="0">Jan</option>
+                                <option value="1">Feb</option>
+                                <option value="2">Mar</option>
+                                <option value="3">Apr</option>
+                                <option value="4">May</option>
+                                <option value="5">Jun</option>
+                                <option value="6">Jul</option>
+                                <option value="7">Aug</option>
+                                <option value="8">Sep</option>
+                                <option value="9">Oct</option>
+                                <option  value="10">Nov</option>
+                                <option  value="11">Dec</option>
                             </select>
-                            <input onChange={(event)=>equal(event.target.value, month, setMonth, setYear)} className="bg-color list-group-item" type="number" min="2000" max="2040" value={year}></input>
+                            <input className="bg-color list-group-item fw-bold"  onChange={(event)=>equal(event.target.value, month, setMonth, setYear)} type="number" min="2000" max="2040" value={year}></input>
                         </div>
                         <div className="col-5 col-md-2" style={{display:"flex"}}>
                             <button className="btn" onClick={()=>prev(year, month, setMonth, setYear)}>
