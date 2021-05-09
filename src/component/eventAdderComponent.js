@@ -42,7 +42,7 @@ const EventAdder = ({eventStartDate,setEvents, Events,  month, year })=>
             <form onSubmit={()=>console.log("clicked")}>
                 <div className="row">
                     <label id="eventStartDate" className="col-form-label text-center">
-                        <span className="badge rounded-pill bg-danger fw-bolder">{eventStartDate}/{month}/{year}</span>
+                        <span className="badge rounded-pill bg-danger fw-bolder">{eventStartDate}/{month+1}/{year}</span>
                     </label>                        
                 </div>
                 <div className="input-group mb-3">

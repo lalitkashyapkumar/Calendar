@@ -15,8 +15,8 @@ const EventShow = ({currentEvent, currentEventSetter, setEvents, Events})=>{
         </div>
         <div className="card-body">
             <p className="card-text">{data.description}</p>
-            <p>Start at: <span className="badge rounded-pill bg-danger">{data.startDate.getDate()}/{data.startDate.getMonth()}/{data.startDate.getFullYear()}</span> at <span className="badge rounded-pill bg-danger">{data.startDate.getHours()} </span> O'Clock</p>
-            <p>End at: <span className="badge rounded-pill bg-danger">{data.endDate.getDate()}/{data.endDate.getMonth()}/{data.endDate.getFullYear()}</span> at <span className="badge rounded-pill bg-danger">{data.endDate.getHours()} </span> O'Clock</p>
+            <p>Start at: <span className="badge rounded-pill bg-danger">{data.startDate.getDate()}/{data.startDate.getMonth()+1}/{data.startDate.getFullYear()}</span> at <span className="badge rounded-pill bg-danger">{data.startDate.getHours()} </span> O'Clock</p>
+            <p>End at: <span className="badge rounded-pill bg-danger">{data.endDate.getDate()}/{data.endDate.getMonth()+1}/{data.endDate.getFullYear()}</span> at <span className="badge rounded-pill bg-danger">{data.endDate.getHours()} </span> O'Clock</p>
         </div>
     </div>)
     })
